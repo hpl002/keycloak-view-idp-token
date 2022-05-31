@@ -1,0 +1,12 @@
+{
+  "name": "keycloack-view-idp-token",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hpl002/keycloack-view-idp-token.git",
+  "author": "Herman Stoud Platou <hsplatou@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "qs": "^6.10.3"
+  }
+}
