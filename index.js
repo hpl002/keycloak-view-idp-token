@@ -1,6 +1,7 @@
 // get keycloak access token for user
 const axios = require("axios")
 const qs = require('qs');
+const jwt_decode = require('jwt-decode');
 
 const getAccessToken = async () => {
     let config = {
@@ -17,7 +18,6 @@ const getAccessToken = async () => {
         })
     };
     const response = await axios(config)
-    console.log("keycloack_token", response.data)
     return response.data.access_token
 };
 
@@ -31,10 +31,17 @@ const getIDPToken = async (accessToken) => {
     };
 
     const response = await axios(config)
-    console.log("idp_token", response.data)
+    // console.log("idp_token", response.data)
+    return response.data
 }
 
 (async () => {
+    // keycloak access token
     const access_token = await getAccessToken()
-    await getIDPToken(access_token)
+    //console.log(jwt_decode(access_token))
+
+    // azure tokens
+    const idp_token = await getIDPToken(access_token)
+    console.log("idp response", idp_token)
+    console.log("decoded idp id_token", jwt_decode(idp_token.id_token))
 })()
