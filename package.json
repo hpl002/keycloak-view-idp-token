@@ -6,7 +6,7 @@
   "author": "Herman Stoud Platou <hsplatou@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.6.0",
     "jwt-decode": "^3.1.2",
     "qs": "^6.10.3"
   }
